@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="bg-green-500 text-white">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="text-xl font-bold">
-          <Link to="/">Picklehub</Link>
+          <Link to="/">PickleHub</Link>
         </div>
 
         <button

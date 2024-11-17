@@ -44,7 +44,7 @@ const PostFeed = () => {
   return (
     <div className="max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Picklehub Feed</h2>
+        <h2 className="text-2xl font-bold">Feed</h2>
         <Link
           to="/create"
           className="bg-green-500 text-white px-3 py-1 rounded"
