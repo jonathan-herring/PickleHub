@@ -42,7 +42,9 @@ const CreatePost = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium">Content</label>
+          <label className="block text-sm font-medium">
+            Content (optional)
+          </label>
           <textarea
             className="w-full border p-2"
             value={content}
@@ -51,7 +53,9 @@ const CreatePost = () => {
           ></textarea>
         </div>
         <div>
-          <label className="block text-sm font-medium">Image URL</label>
+          <label className="block text-sm font-medium">
+            Image URL (optional)
+          </label>
           <input
             type="url"
             className="w-full border p-2"

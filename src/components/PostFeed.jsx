@@ -36,7 +36,6 @@ const PostFeed = () => {
 
   useEffect(() => {
     fetchPosts();
-    // Cleanup debounce on unmount
     return () => {
       debouncedSearch.cancel();
     };

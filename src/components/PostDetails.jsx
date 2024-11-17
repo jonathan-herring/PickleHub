@@ -58,27 +58,24 @@ const PostDetails = () => {
   }, [id]);
 
   const handleUpvote = async () => {
-    if (!post || isUpvoting) return; // Ensure post is loaded and not already upvoting
+    if (!post || isUpvoting) return;
 
-    setIsUpvoting(true); // Prevent multiple upvotes at the same time
+    setIsUpvoting(true);
 
     try {
-      // Optimistically update the UI
       setPost((prevPost) => ({
         ...prevPost,
         upvotes: prevPost.upvotes + 1,
       }));
 
-      // Perform the atomic increment using Supabase's increment method
       const { error } = await supabase.rpc("increment_upvotes", {
         row_id: id,
       });
 
       if (error) {
-        throw error; // Handle the error in the catch block
+        throw error;
       }
 
-      // Optionally refetch the post to ensure data consistency
       await fetchPost();
     } catch (err) {
       console.error("Error upvoting:", err.message);
@@ -109,10 +106,9 @@ const PostDetails = () => {
 
       if (error) throw error;
 
-      // Refetch comments to ensure the latest ones are displayed
       await fetchComments();
 
-      setNewComment(""); // Clear the input field
+      setNewComment("");
     } catch (err) {
       console.error("Error adding comment:", err.message);
       setError("Failed to add comment. Please try again.");
